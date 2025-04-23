@@ -1,15 +1,110 @@
 # yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
-language: "en-US"
+
+language: en-US
 early_access: false
+enable_free_tier: true
+auto_resolve_threads: true
+
 reviews:
-  profile: "chill"
+  profile: chill
   request_changes_workflow: false
   high_level_summary: true
-  poem: true
+  high_level_summary_placeholder: '@coderabbitai summary'
   review_status: true
-  collapse_walkthrough: false
+  commit_status: true
+  fail_commit_status: false
+  changed_files_summary: true
+  sequence_diagrams: true
+  assess_linked_issues: true
+  related_issues: true
+  related_prs: true
+  suggested_labels: true
+  suggested_reviewers: true
+  poem: true
+  abort_on_close: true
+
   auto_review:
     enabled: true
-    drafts: false
+    auto_incremental_review: true
+
+  finishing_touches:
+    docstrings:
+      enabled: true
+
+tools:
+  ast-grep:
+    essential_rules: true
+  shellcheck:
+    enabled: true
+  ruff:
+    enabled: true
+  markdownlint:
+    enabled: true
+  github-checks:
+    enabled: true
+    timeout_ms: 90000
+  languagetool:
+    enabled: true
+  biome:
+    enabled: true
+  hadolint:
+    enabled: true
+  swiftlint:
+    enabled: true
+  phpstan:
+    enabled: true
+  golangci-lint:
+    enabled: true
+  yamllint:
+    enabled: true
+  gitleaks:
+    enabled: true
+  checkov:
+    enabled: true
+  detekt:
+    enabled: true
+  eslint:
+    enabled: true
+  rubocop:
+    enabled: true
+  buf:
+    enabled: true
+  regal:
+    enabled: true
+  actionlint:
+    enabled: true
+  pmd:
+    enabled: true
+  cppcheck:
+    enabled: true
+  semgrep:
+    enabled: true
+  circleci:
+    enabled: true
+  sqlfluff:
+    enabled: true
+  prismaLint:
+    enabled: true
+  oxc:
+    enabled: true
+  shopifyThemeCheck:
+    enabled: true
+
 chat:
   auto_reply: true
+  create_issues: true
+
+knowledge_base:
+  opt_out: false
+  web_search:
+    enabled: true
+  learnings:
+    scope: auto
+  issues:
+    scope: auto
+  pull_requests:
+    scope: auto
+
+code_generation:
+  docstrings:
+    language: en-US
