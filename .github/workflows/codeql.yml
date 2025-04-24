@@ -13,9 +13,9 @@ name: "CodeQL Advanced For Angular"
 
 on:
   push:
-    branches: [ "main","develop" ]
+    branches: [ "**" ]
   pull_request:
-    branches: [ "main","develop" ]
+    branches: [ "**" ]
   schedule:
     - cron: '29 5 * * 0'
 
