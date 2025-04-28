@@ -1,13 +1,8 @@
 name: "CodeQL for Angular"
 
 on:
-  push:
-    branches: [ "**" ]
   pull_request:
-    branches: [ "**" ]
     types: [opened, synchronize, reopened]
-  schedule:
-    - cron: '29 5 * * 0'
 
 jobs:
   analyze:
