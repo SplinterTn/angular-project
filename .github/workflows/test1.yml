@@ -1,4 +1,4 @@
-name: Example Action on Pull Request
+name: Example wael
 
 on:
   pull_request:
@@ -13,6 +13,6 @@ jobs:
 
       - name: Run an example script
         run: |
-          echo "Hello from PR"
+          printf "Hello from PR\n"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
