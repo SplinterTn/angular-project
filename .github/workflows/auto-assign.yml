@@ -1,15 +1,13 @@
-name: Auto Assign
-
+name: Auto Assign Reviewers
 on:
   pull_request:
-    types: [opened, ready_for_review]
+    types: [opened, reopened]
 
 jobs:
-  add-reviewer:
+  assign-reviewers:
     runs-on: ubuntu-latest
     steps:
-      - uses: kentaro-m/auto-assign-action@v1.2.3
+      - uses: kentaro-m/auto-assign-action@v2.0.0
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          reviewers: |
-             SplinterTn
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          configuration-path: '.github/CODEOWNERS'
