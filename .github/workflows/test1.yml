@@ -1,0 +1,18 @@
+name: Example wael
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  example_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run an example script
+        run: |
+          printf "Hello from PR\n"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
